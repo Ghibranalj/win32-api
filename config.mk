@@ -7,8 +7,8 @@ BUILD_DIR = build
 INC_DIR = src
 
 ### COMPILER CONFIG ###
-CC=gcc -std=c17
-CPP=g++ -std=c++17
-CFLAGS= -Wall -Wextra -pedantic -O0 -g
-LDFLAG=
+CC=winegcc -std=c17
+CPP=wineg++ -std=c++17
+CFLAGS= -Wall -Wextra -pedantic -O0 -g -m32
+LDFLAG=  -pthread
 LIBS=  # your libs here

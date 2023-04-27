@@ -15,8 +15,8 @@ mkdir:
 	@mkdir -p $(BUILD_DIR) $(BUILD_DIR)/res
 
 run: all
-	$(info Running $(EXE))
-	@./$(EXE)
+	$(info Running $(EXE).exe)
+	@WINEDEBUG=fixme-all wine ./$(EXE).exe
 
 clean:
 	$(info Cleaning)
@@ -27,7 +27,7 @@ lsp: clean
 	@bear -- $(MAKE) all
 
 $(EXE): $(OBJ)
-	$(info Linking $@)
+	$(info Linking $@.exe)
 	@$(CPP) $(CFLAGS) -o $@ $^ $(LDFLAG)
 
 $(BUILD_DIR)/%.cpp.o: $(SRC_DIR)/%.cpp

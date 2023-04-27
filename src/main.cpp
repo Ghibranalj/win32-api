@@ -1,7 +1,6 @@
-#include <iostream>
-#include "helloer.h"
+#include <windows.h>
 
-int main() {
-    hello();
-    std::cout << "Hello from C++" << std::endl;
+int main (){
+    MessageBox(NULL, "Hello world", "Note", MB_OK);
+    return 0;
 }
